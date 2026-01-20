@@ -20,6 +20,6 @@ jobs:
         run: mvn package
 
       - name: View package
-        run: ls -lrt
+        run: ls -lrt target
 
       
