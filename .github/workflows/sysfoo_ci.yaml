@@ -1,0 +1,25 @@
+name: sysfoo-ci
+on: push
+jobs:
+  sysfoo-ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello-world
+        run: echo "Hello sysfoo-ci!"
+        
+      - name: Code Checkout
+        uses: actions/checkout@v6
+        
+      - name: Test
+        run: mvn test
+        
+      - name: Clean package
+        run: mvn clean
+        
+      - name: Create Package
+        run: mvn package
+
+      - name: View package
+        run: ls -lrt
+
+      
